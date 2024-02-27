@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basic HTML Page</title>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+    <!-- You can add CSS styles here -->
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin: 0 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 10px;
+            display:flex;
+        }
+        .column {
+            flex: 1;
+            padding: 0px;
+        }
+        .column:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" hx-get="/available-html" hx-trigger="load" hx-swap="outerHTML"></div>
+</body>
+</html>

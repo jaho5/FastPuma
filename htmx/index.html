@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basic HTML Page</title>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+    <!-- You can add CSS styles here -->
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-size:1.25rem;
+        }
+        .container {
+            margin: 0 0;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 3rem;
+            display:flex;
+            justify-content: center;
+        }
+        .column {
+            flex: 1;
+            padding: 0px;
+        }
+        .column:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        height:2rem;
+      }
+      /* Styling for navigation links */
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+      }
+      button {
+        font-size:1.5rem;
+      }
+      h2 {
+        margin: .4rem;
+      }
+      .is_saved {
+        background-color: #89f0e5;
+      }
+      .load-button {
+        background-color: #89f0e5;
+      }
+    </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" hx-get="/available-html" hx-target="#content" hx-swap="innerHTML" class="active">Available</a>
+    <a href="#" hx-get="/match-html" hx-target="#content" hx-swap="innerHTML">Matches</a>
+    <a href="#" hx-get="/contact" hx-target="#content" hx-swap="innerHTML">Contact</a>
+  </div>
+      <div id='content'>
+        <div hx-get="/available-html" hx-trigger="load" hx-swap="outerHTML">
+        </div>
+      </div>
+</body>
+</html>

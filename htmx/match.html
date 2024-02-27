@@ -1,0 +1,41 @@
+<style>
+  button {
+    font-size:2rem;
+  }
+  .match {
+    margin: 0 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: .25rem;
+  }
+</style>
+<div class='match'>
+    <h2>Matches</h2>
+</div>
+<div>
+        <button hx-post="/matches/create" hx-target='#content' hx-swap='innerHTML'>Create Match</button>
+    </div>
+<div class="container">
+    <div id="matches">
+        [[<div id="match{{id}}">
+            <div class="match">
+                <span class="player">{{side_1_user_1_display_name}}+</span><span class="player">{{side_1_user_2_display_name}}</span>
+                <span class="player">{{side_2_user_1_display_name}}</span><span class="player">+{{side_2_user_2_display_name}}</span>
+                <div>
+                    <!-- <input type="number" placeholder="Set 1" name="set1_side1" min="0" max="30">
+                    <input type="number" placeholder="Set 1" name="set1_side2" min="0" max="30">
+                </div>
+                <div>
+                    <input type="number" placeholder="Set 2" name="set2_side1" min="0" max="30">
+                    <input type="number" placeholder="Set 2" name="set2_side2" min="0" max="30">
+                </div>
+                <div>
+                    <input type="number" placeholder="Set 3" name="set3_side1" min="0" max="30">
+                    <input type="number" placeholder="Set 3" name="set3_side2" min="0" max="30"> -->
+                </div>
+            </div>
+        </div>]]
+    </div>
+</div>
